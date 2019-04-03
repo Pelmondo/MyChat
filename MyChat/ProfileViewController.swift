@@ -7,46 +7,145 @@
 //
 
 import UIKit
+import Foundation
 
 class ProfileViewController: UIViewController {
 
-    let imageView = UIImageView()
-    let nameLabel = UILabel()
+    let PhotoimageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "placeholderuser")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Some Name"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
+    let aboutLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.text = "asfhdjaslfh asdlfhajdshf ladjhf adbflajbf ilaerhwaieljrljan fabdsbfljhdf lkdsajfhja aldsfhjahdf lfdh ladjhf adbflajbf ilaerhwaieljrljan fabdsbfljhdf lkdsajfhja aldsfhjahdf"
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 20)
+    
+       return label
+    }()
+    
+    let changeButton: UIButton = {
+       let button = UIButton()
+       button.setTitle("Редактировать", for: .normal)
+       button.setTitleColor(.gray, for: .normal)
+       button.addTarget(self, action:#selector(changeButtonClicked), for: .touchUpInside )
+       button.backgroundColor = .white
+       button.layer.cornerRadius = 8
+       button.translatesAutoresizingMaskIntoConstraints = false
+        
+       return button
+    }()
+    
+    let photoButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "applephotos"), for: .normal)
+        button.addTarget(self, action: #selector(photoButtonClicked), for: .touchUpInside)
+        button.layer.cornerRadius = 8
+        button.backgroundColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Profile"// Do any additional setup after loading the view.
         
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        
-        // Image add
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        
-        
-        view.addSubview(imageView)
-        imageView.image = UIImage(named: "placeholderuser")
-        imageView.contentMode = .scaleAspectFit
-//
-        let constraints = [
-            imageView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            imageView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            imageView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width + 12)
-//            imageView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-//            imageView.heightAnchor.constraint(equalTo: self.view.widthAnchor)
-//            imageView.heightAnchor.constraint(equalT: self.view.widthAnchor)
-        ]
 
+        view.addSubview(PhotoimageView)
+        view.addSubview(nameLabel)
+        view.addSubview(aboutLabel)
+        view.addSubview(changeButton)
+        view.addSubview(photoButton)
+        
+        setUpLayout()
+    }
+    
+    private func setUpLayout() {
+        let constraints = [
+            PhotoimageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
+            PhotoimageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            PhotoimageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            PhotoimageView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
+            PhotoimageView.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50),
+            
+            nameLabel.topAnchor.constraint(equalTo: PhotoimageView.bottomAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            nameLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 16),
+            nameLabel.bottomAnchor.constraint(equalTo: aboutLabel.topAnchor,constant: 0),
+            
+            aboutLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 0),
+            aboutLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 16),
+            aboutLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            
+            changeButton.topAnchor.constraint(greaterThanOrEqualTo: aboutLabel.bottomAnchor, constant: 8),
+            changeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -18),
+            changeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 16),
+            changeButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            photoButton.topAnchor.constraint(greaterThanOrEqualTo: aboutLabel.bottomAnchor, constant: 8),
+            photoButton.heightAnchor.constraint(equalTo: changeButton.heightAnchor),
+            photoButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            photoButton.leadingAnchor.constraint(equalTo: changeButton.trailingAnchor,constant: 5),
+            photoButton.widthAnchor.constraint(equalToConstant: 50),
+            photoButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -18)
+        ]
+        
         NSLayoutConstraint.activate(constraints)
-        
-        //nameLabel add
-//        nameLabel.frame = CGRect
-        
+
     }
 
+    @objc func changeButtonClicked() {
+        print("Button Clicked")
+    }
 
+    
+    // MARK: - Settings photo button
+    @objc func photoButtonClicked() {
+        print("Photo button clicked")
+        let alert = UIAlertController(title: "Выбрать фото", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Галерея", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: { _ in
+            NSLog("Отмена")
+        }))
+        
+        
+        self.present(alert,animated: true, completion: nil)
+    }
+    
+    
+    private func openGallary(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        //If you dont want to edit the photo then you can set allowsEditing to false
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
 }
 
