@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 class ProfileViewController: UIViewController {
-
+    
+    // settings for UI elements
     let PhotoimageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "placeholderuser")
@@ -81,6 +82,7 @@ class ProfileViewController: UIViewController {
         setUpLayout()
     }
     
+    //MARK: - Layout settings
     private func setUpLayout() {
         let constraints = [
             PhotoimageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
@@ -112,9 +114,9 @@ class ProfileViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(constraints)
-
     }
-
+    
+    //MARK: - Change button settings
     @objc func changeButtonClicked() {
         print("Button Clicked")
     }

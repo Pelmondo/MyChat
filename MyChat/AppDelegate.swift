@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController:ProfileViewController())
+        window?.rootViewController = UINavigationController(rootViewController:ConversationListViewController())
         
         return true
     }

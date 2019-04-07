@@ -12,16 +12,20 @@
 		5689F75B22531976001ADCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689F75922531976001ADCCA /* Main.storyboard */; };
 		5689F75D2253197B001ADCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5689F75C2253197B001ADCCA /* Assets.xcassets */; };
 		5689F7602253197B001ADCCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689F75E2253197B001ADCCA /* LaunchScreen.storyboard */; };
+		5689F76822548905001ADCCA /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F76722548905001ADCCA /* ConversationListViewController.swift */; };
+		5689F76B22548D49001ADCCA /* ConversationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5689F75222531976001ADCCA /* MyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5689F75522531976001ADCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5689F75722531976001ADCCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5689F75722531976001ADCCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "../New Group/ProfileViewController.swift"; sourceTree = "<group>"; };
 		5689F75A22531976001ADCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5689F75C2253197B001ADCCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5689F75F2253197B001ADCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5689F7612253197B001ADCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5689F76722548905001ADCCA /* ConversationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
+		5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,31 @@
 			isa = PBXGroup;
 			children = (
 				5689F75522531976001ADCCA /* AppDelegate.swift */,
-				5689F75722531976001ADCCA /* ProfileViewController.swift */,
+				5689F7692254890B001ADCCA /* ConverstionList */,
+				56A504DE2257107E00FD46C0 /* Profile  */,
 				5689F75922531976001ADCCA /* Main.storyboard */,
 				5689F75C2253197B001ADCCA /* Assets.xcassets */,
 				5689F75E2253197B001ADCCA /* LaunchScreen.storyboard */,
 				5689F7612253197B001ADCCA /* Info.plist */,
 			);
 			path = MyChat;
+			sourceTree = "<group>";
+		};
+		5689F7692254890B001ADCCA /* ConverstionList */ = {
+			isa = PBXGroup;
+			children = (
+				5689F76722548905001ADCCA /* ConversationListViewController.swift */,
+				5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */,
+			);
+			path = ConverstionList;
+			sourceTree = "<group>";
+		};
+		56A504DE2257107E00FD46C0 /* Profile  */ = {
+			isa = PBXGroup;
+			children = (
+				5689F75722531976001ADCCA /* ProfileViewController.swift */,
+			);
+			path = "Profile ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5689F76B22548D49001ADCCA /* ConversationsTableViewCell.swift in Sources */,
+				5689F76822548905001ADCCA /* ConversationListViewController.swift in Sources */,
 				5689F75822531976001ADCCA /* ProfileViewController.swift in Sources */,
 				5689F75622531976001ADCCA /* AppDelegate.swift in Sources */,
 			);
