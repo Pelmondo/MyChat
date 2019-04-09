@@ -29,7 +29,8 @@ class ConversationsTableViewCell: UITableViewCell {
     
     let lastDateLabel: UILabel = {
         let label = UILabel()
-        
+        label.text = "25.01.2019"
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -41,17 +42,24 @@ class ConversationsTableViewCell: UITableViewCell {
     
         addSubview(lastMessageLabel)
         addSubview(nameLebel)
+        addSubview(lastDateLabel)
         //MARK: - Layout settings
         let constraints = [
             nameLebel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             nameLebel.bottomAnchor.constraint(equalTo: lastMessageLabel.topAnchor,constant: -8),
             nameLebel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            nameLebel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
+            nameLebel.widthAnchor.constraint(equalToConstant: 250),
+//            nameLebel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+//
 //            lastMessageLabel.topAnchor.constraint(equalTo: nameLebel.bottomAnchor,constant: 8),
             lastMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             lastMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            lastMessageLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+            lastMessageLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            lastDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            lastDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            lastDateLabel.leadingAnchor.constraint(greaterThanOrEqualTo: nameLebel.trailingAnchor, constant: 8),
+            lastDateLabel.bottomAnchor.constraint(equalTo: lastMessageLabel.topAnchor, constant: -8)
         ]
         
         NSLayoutConstraint.activate(constraints)
