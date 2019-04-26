@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     
     // settings for UI elements
     let PhotoimageView: UIImageView = {
+        
         let imageView = UIImageView()
         imageView.image = UIImage(named: "placeholderuser")
         imageView.contentMode = .scaleAspectFit
@@ -22,6 +23,7 @@ class ProfileViewController: UIViewController {
     }()
     
     let nameLabel: UILabel = {
+        
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Some Name"
@@ -33,6 +35,7 @@ class ProfileViewController: UIViewController {
     }()
     
     let aboutLabel: UILabel = {
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -44,6 +47,7 @@ class ProfileViewController: UIViewController {
     }()
     
     let changeButton: UIButton = {
+        
        let button = UIButton()
        button.setTitle("Редактировать", for: .normal)
        button.setTitleColor(.gray, for: .normal)
@@ -56,8 +60,9 @@ class ProfileViewController: UIViewController {
     }()
     
     let photoButton: UIButton = {
+        
         let button = UIButton()
-        button.setImage(UIImage(named: "applephotos"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "applephotos"), for: .normal)
         button.addTarget(self, action: #selector(photoButtonClicked), for: .touchUpInside)
         button.layer.cornerRadius = 8
         button.backgroundColor = .white
@@ -66,20 +71,43 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    let backButton: UIButton = {
+        
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "Cancel"), for: .normal)
+        button.addTarget(self, action: #selector(backToConversations), for: .touchUpInside )
+        button.contentMode = .scaleAspectFit
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+      return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Profile"// Do any additional setup after loading the view.
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(backToConversations))
         view.backgroundColor = UIColor(white: 0.95, alpha: 1)
-
+        
+        addSubView()
+        setUpLayout()
+    }
+    
+    private func addSubView() {
+        
         view.addSubview(PhotoimageView)
         view.addSubview(nameLabel)
         view.addSubview(aboutLabel)
         view.addSubview(changeButton)
         view.addSubview(photoButton)
+        view.addSubview(backButton)
         
-        setUpLayout()
+    }
+    
+    // Navigation
+    @objc func backToConversations() {
+        
+        dismiss(animated: true)
     }
     
     //MARK: - Layout settings
@@ -110,7 +138,12 @@ class ProfileViewController: UIViewController {
             photoButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             photoButton.leadingAnchor.constraint(equalTo: changeButton.trailingAnchor,constant: 5),
             photoButton.widthAnchor.constraint(equalToConstant: 50),
-            photoButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -18)
+            photoButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -18),
+            
+            backButton.bottomAnchor.constraint(equalTo: PhotoimageView.topAnchor, constant: -4),
+            backButton.widthAnchor.constraint(equalToConstant: 34),
+            backButton.heightAnchor.constraint(equalToConstant: 34),
+            backButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 5)
         ]
         
         NSLayoutConstraint.activate(constraints)

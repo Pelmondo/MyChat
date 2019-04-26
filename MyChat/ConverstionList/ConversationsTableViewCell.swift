@@ -21,7 +21,7 @@ class ConversationsTableViewCell: UITableViewCell {
     let nameLebel: UILabel = {
         let label = UILabel()
         label.text = "Hesting Name"
-        label.textColor = .green
+        label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

@@ -15,14 +15,28 @@ class ConversationListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "My Chat" // set Title name
-        navigationController?.navigationBar.prefersLargeTitles = true
+        setupNavigationBar()
         tableView.register(ConversationsTableViewCell.self, forCellReuseIdentifier: cellID)
-        
-        
-        
+       
     }
 
+    // MARK: -  Setup NavigationBar
+    private func setupNavigationBar() {
+        
+        navigationItem.title = "My Chat" // set Title name
+//        navigationController?.navigationBar.prefersLargeTitles = true
+        let profileButton = UIButton(type: .system)
+        profileButton.setImage(#imageLiteral(resourceName: "Shape"), for: .normal)
+        profileButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        profileButton.contentMode = .scaleAspectFit
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: profileButton)
+        profileButton.addTarget(self, action: #selector(moveToProfile), for: .touchUpInside)
+    }
+    // Test
+    @objc func moveToProfile() {
+        present(ProfileViewController(), animated: true)
+    }
+    
     // MARK: - Table view data source
     var messages = [
         "hi",
@@ -54,6 +68,8 @@ class ConversationListViewController: UITableViewController {
 
         return cell
     }
+    
+    
     
 
     /*

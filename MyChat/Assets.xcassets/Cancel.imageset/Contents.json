@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Cancel.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "applephotos.png",
       "scale" : "2x"
     },
     {
