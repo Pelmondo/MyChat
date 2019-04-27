@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5646DC32227354160029C3F7 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5646DC31227354160029C3F7 /* ConversationViewController.swift */; };
+		5646DC34227404450029C3F7 /* StructuresConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5646DC33227404450029C3F7 /* StructuresConversation.swift */; };
 		5689F75622531976001ADCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F75522531976001ADCCA /* AppDelegate.swift */; };
 		5689F75822531976001ADCCA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F75722531976001ADCCA /* ProfileViewController.swift */; };
 		5689F75B22531976001ADCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689F75922531976001ADCCA /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5646DC31227354160029C3F7 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		5646DC33227404450029C3F7 /* StructuresConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructuresConversation.swift; sourceTree = "<group>"; };
 		5689F75222531976001ADCCA /* MyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5689F75522531976001ADCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5689F75722531976001ADCCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "../New Group/ProfileViewController.swift"; sourceTree = "<group>"; };
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5646DC30227353D90029C3F7 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				5646DC31227354160029C3F7 /* ConversationViewController.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
 		5689F74922531976001ADCCA = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +86,8 @@
 			children = (
 				5689F76722548905001ADCCA /* ConversationListViewController.swift */,
 				5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */,
+				5646DC30227353D90029C3F7 /* Conversation */,
+				5646DC33227404450029C3F7 /* StructuresConversation.swift */,
 			);
 			path = ConverstionList;
 			sourceTree = "<group>";
@@ -159,7 +173,9 @@
 			files = (
 				5689F76B22548D49001ADCCA /* ConversationsTableViewCell.swift in Sources */,
 				5689F76822548905001ADCCA /* ConversationListViewController.swift in Sources */,
+				5646DC32227354160029C3F7 /* ConversationViewController.swift in Sources */,
 				5689F75822531976001ADCCA /* ProfileViewController.swift in Sources */,
+				5646DC34227404450029C3F7 /* StructuresConversation.swift in Sources */,
 				5689F75622531976001ADCCA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

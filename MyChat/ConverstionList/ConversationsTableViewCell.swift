@@ -20,7 +20,7 @@ class ConversationsTableViewCell: UITableViewCell {
     
     let nameLebel: UILabel = {
         let label = UILabel()
-        label.text = "Hesting Name"
+//        label.text = "Hesting Name"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +43,8 @@ class ConversationsTableViewCell: UITableViewCell {
         addSubview(lastMessageLabel)
         addSubview(nameLebel)
         addSubview(lastDateLabel)
+        
+        
         //MARK: - Layout settings
         let constraints = [
             nameLebel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
@@ -64,6 +66,7 @@ class ConversationsTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(constraints)
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

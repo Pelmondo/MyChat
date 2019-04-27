@@ -110,24 +110,30 @@ class ProfileViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    
     //MARK: - Layout settings
     private func setUpLayout() {
+        
         let constraints = [
+            //Setting photo
             PhotoimageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
             PhotoimageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             PhotoimageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             PhotoimageView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width),
             PhotoimageView.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50),
             
+            //Setting name
             nameLabel.topAnchor.constraint(equalTo: PhotoimageView.bottomAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             nameLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 16),
             nameLabel.bottomAnchor.constraint(equalTo: aboutLabel.topAnchor,constant: 0),
             
+            //Setting discriptions
             aboutLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 0),
             aboutLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 16),
             aboutLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             
+            //Setting buttons
             changeButton.topAnchor.constraint(greaterThanOrEqualTo: aboutLabel.bottomAnchor, constant: 8),
             changeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -18),
             changeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 16),
