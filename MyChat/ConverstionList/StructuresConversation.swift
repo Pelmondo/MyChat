@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+// Type Message
 struct Message {
     let name : String
     let message : String

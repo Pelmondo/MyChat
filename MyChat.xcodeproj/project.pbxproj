@@ -16,6 +16,7 @@
 		5689F7602253197B001ADCCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5689F75E2253197B001ADCCA /* LaunchScreen.storyboard */; };
 		5689F76822548905001ADCCA /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F76722548905001ADCCA /* ConversationListViewController.swift */; };
 		5689F76B22548D49001ADCCA /* ConversationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */; };
+		569A70AF2276B97F008BF729 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A70AE2276B97F008BF729 /* MessagesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5689F7612253197B001ADCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5689F76722548905001ADCCA /* ConversationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		5689F76A22548D49001ADCCA /* ConversationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsTableViewCell.swift; sourceTree = "<group>"; };
+		569A70AE2276B97F008BF729 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				5646DC31227354160029C3F7 /* ConversationViewController.swift */,
+				569A70AE2276B97F008BF729 /* MessagesTableViewCell.swift */,
 			);
 			path = Conversation;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				5646DC32227354160029C3F7 /* ConversationViewController.swift in Sources */,
 				5689F75822531976001ADCCA /* ProfileViewController.swift in Sources */,
 				5646DC34227404450029C3F7 /* StructuresConversation.swift in Sources */,
+				569A70AF2276B97F008BF729 /* MessagesTableViewCell.swift in Sources */,
 				5689F75622531976001ADCCA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

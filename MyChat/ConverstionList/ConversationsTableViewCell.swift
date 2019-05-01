@@ -13,7 +13,7 @@ class ConversationsTableViewCell: UITableViewCell {
     let lastMessageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .red
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,35 +38,41 @@ class ConversationsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .clear
-        
+        //Setup subview
+        setUpSubview()
+        layoutSetting()
+    }
     
-        addSubview(lastMessageLabel)
-        addSubview(nameLebel)
-        addSubview(lastDateLabel)
+    func setUpSubview() {
         
-        
-        //MARK: - Layout settings
+        self.addSubview(lastMessageLabel)
+        self.addSubview(nameLebel)
+        self.addSubview(lastDateLabel)
+    }
+    
+    //MARK: - Layout settings
+    func layoutSetting() {
+    
         let constraints = [
             nameLebel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             nameLebel.bottomAnchor.constraint(equalTo: lastMessageLabel.topAnchor,constant: -8),
             nameLebel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             nameLebel.widthAnchor.constraint(equalToConstant: 250),
-//            nameLebel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-//
-//            lastMessageLabel.topAnchor.constraint(equalTo: nameLebel.bottomAnchor,constant: 8),
+        //            nameLebel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+        //
+        //            lastMessageLabel.topAnchor.constraint(equalTo: nameLebel.bottomAnchor,constant: 8),
             lastMessageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            lastMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            lastMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
             lastMessageLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
+        
             lastDateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             lastDateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             lastDateLabel.leadingAnchor.constraint(greaterThanOrEqualTo: nameLebel.trailingAnchor, constant: 8),
             lastDateLabel.bottomAnchor.constraint(equalTo: lastMessageLabel.topAnchor, constant: -8)
         ]
-        
+    
         NSLayoutConstraint.activate(constraints)
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

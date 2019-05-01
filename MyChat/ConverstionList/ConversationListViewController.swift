@@ -16,6 +16,9 @@ class ConversationListViewController: UITableViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(ConversationsTableViewCell.self, forCellReuseIdentifier: cellID)
        
     }
@@ -40,7 +43,7 @@ class ConversationListViewController: UITableViewController {
     // MARK: - Table view data source
     var messages : [Message] = [
         Message(name: "Serga", message: "Hi everyone!", isComing: true),
-        Message(name: "Nasya", message: "How are You?", isComing: false),
+        Message(name: "Nastya", message: "How are You?", isComing: false),
         Message(name: "Oleg", message:"Long messages Long messages Long messages Long messages Long messages Long messages" , isComing: true)
         
     ]
