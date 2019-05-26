@@ -42,7 +42,7 @@ class ConversationListViewController: UITableViewController {
     
     // MARK: - Table view data source
     var messages : [Message] = [
-        Message(name: "Serga", message: "Hi everyone!", isComing: true),
+        Message(name: "Саша", message: "Hi everyone!", isComing: true),
         Message(name: "Nastya", message: "How are You?", isComing: false),
         Message(name: "Oleg", message:"Long messages Long messages Long messages Long messages Long messages Long messages" , isComing: true)
         
@@ -75,7 +75,7 @@ class ConversationListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let conversation = ConversationViewController()
-        conversation.testProp = messages[indexPath.row].name
+        conversation.userName = messages[indexPath.row].name
         navigationController?.pushViewController(conversation, animated: true)
     }
 

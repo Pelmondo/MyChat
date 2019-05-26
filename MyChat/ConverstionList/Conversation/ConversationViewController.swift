@@ -13,13 +13,15 @@ class ConversationViewController: UIViewController {
     
     let tableView : UITableView = {
        let table = UITableView()
+       table.separatorStyle = .none
+       table.backgroundColor = UIColor(white: 0.95, alpha: 1)
        return table
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .red
+        
         
         //SubView
         view.addSubview(tableView)
@@ -30,11 +32,20 @@ class ConversationViewController: UIViewController {
     }
     
     // test
-    var testProp : String = "User" {
+    var userName : String = "User" {
         didSet {
-            navigationItem.title = testProp
+            navigationItem.title = userName
         }
     }
+    
+    var messages : [Message] = [
+        Message(name: "", message: "Hello", isComing: true),
+        Message(name: "", message: "How are you? What are you doing here?", isComing: true),
+        Message(name: "", message: "So long message for you, from me about your and my exams, suka so dificult i can,t do this shit, maybe you can help me please...", isComing: true),
+        Message(name: "", message: "Hello", isComing: false),
+        Message(name: "", message: "How are you? What are you doing here?", isComing: false),
+        Message(name: "", message: "So long message for you, from me about your and my exams, suka so dificult i can,t do this shit, maybe you can help me please...", isComing: false)
+    ]
     
     private let cellName = "CellId"
     
@@ -76,11 +87,12 @@ class ConversationViewController: UIViewController {
 extension ConversationViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! MessagesTableViewCell
+        cell.chatMessage = messages[indexPath.row]
         return cell
     }
     
